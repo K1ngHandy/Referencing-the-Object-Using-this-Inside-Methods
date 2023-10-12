@@ -60,7 +60,7 @@
         medium: 'watercolor',
         paintings: 10,
         paint() {
-          return `The painter paints ${this.medium} paintings like ${this['favorite artist']}`;
+          this.paintings++;
         }
       };
 
@@ -76,7 +76,8 @@
       health: 100,
       heal(number){
         if(this.health < 100) {
-        return `${this.type} has recovered ${number} health points, putting the adventurer at ${this.health} HP`
+          this.health += number;
+        return `${this.type} has recovered ${number} health points, putting the adventurer at ${this.health} HP`;
       } else {
         return `${this.type} has full health`;
       }
